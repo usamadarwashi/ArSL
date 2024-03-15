@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arabic Sign Language Translator</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS ScreenStyle Sheet -->
+    <link rel="stylesheet" href="{{ url_for('static', path='CSS/ScreenStyle.css') }}">
+
+    <!-- JavaScript to access device camera -->
+    <script src="{{ url_for('static', path='JavaScript/WebAppJs.js') }}"></script>
+
+    <!-- CSS Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css" integrity="sha384-z4tVnCr80ZcL0iufVdGQSUzNvJsKjEtqYZjiQrrYKlpGow+btDHDfQWkFjoaz/Zr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/0a90250592.css">
+
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body class="Home">
+    <!-- Section to contain the nav bar -->
+    <section class="HeaderHome">
+        <nav class="navbar fixed-top">
+            <a href="{{ url_for('home') }}"><img src="{{ url_for('static', path='Images/Logo/we-connect-high-resolution-logo-white-on-transparent-background.png') }}" alt="Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times-circle" onClick="hideMenu()"></i>
+                <ul>
+                    <li><a href="{{ url_for('about_us') }}">About Us</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onClick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <!-- Section to contain the video and output -->
+    <section class="Body">
+        <h1 class="Title">Arabic Sign Language Translator</h1>
+        <img class="Video" id="Video" src="{{ url_for('video_feed') }}">
+    </section>
+
+    <!-- Section to contain the footer content -->
+    <section class="Footer">
+        <a href="{{ url_for('home') }}"><img class="FtrImg" src="{{ url_for('static', path='Images/Logo/we-connect-high-resolution-logo-white-on-transparent-background.png') }}" alt="Logo"></a>
+        <br>
+        <h3>Contact Information</h3>
+        <i class="fa fa-phone"><p>Phone Number: 99999999</p></i><br>
+		<i class="fa fa-envelope"><p>Email Address:<br>WeConnect@gmail.com</p></i><br>
+		<a><h3>Location Information</h3></a>
+		<i class="fa fa-map-pin"><p>Oman, Muscat, AL-Hail,<br>National University of Sicence and Technology, CRI Building</p></i>
+		<p>All Rights Reserved. © 2022 <a style="color: white; text-decoration: none;" href="{{ url_for('home') }}">We Connect</a></p>
+		</section>
+<!-- JavaScript code for small devices toggle menu -->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+        navLinks.style.right = "0";
+    }
+    function hideMenu() {
+        navLinks.style.right = "-200px";
+    }
+</script>
+</body>
+</html>
